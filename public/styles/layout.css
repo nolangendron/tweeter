@@ -27,6 +27,7 @@ body {
 
  main {
   position: relative;
+  height: 400px;
   top: 80px;
   width: 450px;
   margin: auto;
