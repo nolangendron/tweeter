@@ -1,9 +1,7 @@
 .new-tweet {
-  width: 80%;
-  position: absolute;
-  top: 35%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  width: 90%;
+  margin: 20px auto;
+  position: relative;
   background-color: #eee;
   border: solid 2px #D3D3D3;
   border-radius: 7.5px;
@@ -16,7 +14,7 @@ textarea {
   padding: 5px;
 }
 
-h2 {
+.new-tweet h2 {
   border-bottom: solid 1px;
   padding: 1px;
   margin-top: 0;
@@ -33,4 +31,6 @@ h2 {
 .counterRed {
   color: red;
 }
+
+
 
