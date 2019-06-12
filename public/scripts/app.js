@@ -38,6 +38,7 @@ const renderTweets = function (tweets) {
 }
 
 const createTweetElement = function(obj) {
+  console.log(obj);
   var $article = $('<article>').addClass('tweet');
     var $header = $('<header>').addClass('tweet-header').appendTo($article);
       $('<img>').attr('src', obj.user.avatars.small).addClass('tweet-icon').appendTo($header);
@@ -54,18 +55,27 @@ const createTweetElement = function(obj) {
   return $article;
 };
 
-$('#new-tweet').on('submit', (event) => {
-  event.preventDefault();
-  $.post('/tweets', $('#new-tweet').serialize(), (newTweet) => {
-    createTweetElement(newTweet);
-
-  })
-})
-
 const loadTweets = function () {
   $.getJSON('/tweets', (data) => {
     renderTweets(data);
   })
-}();
+};
+loadTweets();
+
+
+$('#new-tweet').on('submit', (event) => {
+  event.preventDefault();
+  let tweetText = $('textarea').val();
+  if (tweetText.length === 0) {
+    alert('Tweet must contain at least one character');
+  } else if (tweetText.length > 140) {
+    alert('Tweet exceeds 140 characters');
+  } else {
+  $.post('/tweets', $('#new-tweet').serialize(), (newTweet) => {
+    createTweetElement(newTweet);
+  })
+}
+});
+
 
 });
