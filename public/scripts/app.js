@@ -33,12 +33,11 @@ function timeAgo(ts) {
 
 const renderTweets = function (tweets) {
   for (const user of tweets) {
-    $('#tweets-container').append(createTweetElement(user));
+    $('#tweets-container').prepend(createTweetElement(user));
   }
 }
 
 const createTweetElement = function(obj) {
-  console.log(obj);
   var $article = $('<article>').addClass('tweet');
     var $header = $('<header>').addClass('tweet-header').appendTo($article);
       $('<img>').attr('src', obj.user.avatars.small).addClass('tweet-icon').appendTo($header);
@@ -71,10 +70,11 @@ $('#new-tweet').on('submit', (event) => {
   } else if (tweetText.length > 140) {
     alert('Tweet exceeds 140 characters');
   } else {
-  $.post('/tweets', $('#new-tweet').serialize(), (newTweet) => {
-    createTweetElement(newTweet);
-  })
-}
+      $.post('/tweets', $('#new-tweet').serialize(), (newTweet) => {
+        loadTweets();
+        $('.new-tweet textarea').val('').closest('.new-tweet').find('.counter').text(140);
+    }
+  )}
 });
 
 
