@@ -25,6 +25,17 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
+nav {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  height: 80px;
+  width: 100%;
+  background-color: #00a087;
+  color: #e8fdff;
+  padding: 0px 2em;
+}
+
  main {
   position: relative;
   width: 450px;
@@ -32,5 +43,15 @@ body {
   margin: 80px auto;
   align-content: center;
   background-color: #ffffff;
-  padding-top: 10px;
+  padding: 10px 0;
  }
+
+ article {
+  position: relative;
+  margin: 10px auto;
+  width: 90%;
+  background-color: #eee;
+  border: solid 2px #D3D3D3;
+  border-radius: 7.5px;
+
+}
