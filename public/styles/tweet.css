@@ -20,7 +20,7 @@
   padding-top: 5px;
 }
 
-span {
+.tweet-header span {
   float: right;
   margin-top: 0;
   padding-top: 10px;
@@ -29,7 +29,6 @@ span {
 /*==========Tweet Message============*/
 
 .tweet-message {
-  width: 100%;
   height: auto;
   background-color: #ffffff;
   padding: 10px 5px;
@@ -44,13 +43,14 @@ span {
 
 article .tweet-footer {
   height: 50px;
-  background-color: #ffffff;
   border-top: solid 2px #D3D3D3;
   padding: 5px;
 }
 
 .tweet-footer span {
   float: left;
+  margin-top: 0;
+  padding-top: 10px;
 }
 
 .icon {
