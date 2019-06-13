@@ -21,6 +21,20 @@ textarea {
   margin-top: 0;
 }
 
+.tweet-button {
+  background-color: #00a087;
+  color: white;
+  border: solid .25px black;
+  border-radius: 2.5px;
+  opacity: 0.8;
+  margin: 2.5px;
+}
+
+.tweet-button:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
 .counter {
   float: right;
   font-style: italic;
@@ -33,12 +47,17 @@ textarea {
   color: red;
 }
 
+/*===================================
+      errors
+=====================================*/
+
 .if-errors p {
   color: red;
   display: none;
   font-size: 1em;
-  font-weight: bold;
+
 }
+
 
 
 

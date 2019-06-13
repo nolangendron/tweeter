@@ -6,30 +6,6 @@
 
 $(document).ready(function() {
 
-// calculate time ago
-function timeAgo(ts) {
-    const d = new Date();
-    const nowTs = Math.floor(d.getTime() / 1000);
-    const seconds = nowTs - ts;
-
-    if (seconds > 2 * 24 * 3600) {
-        return "a few days ago";
-    }
-    if (seconds > 24 * 3600) {
-        return "yesterday";
-    }
-
-    if (seconds > 3600) {
-        return "a few hours ago";
-    }
-    if (seconds > 1800) {
-        return "Half an hour ago";
-    }
-    if (seconds > 60) {
-        return Math.floor(seconds / 60) + " minutes ago";
-    }
-    return "A long time ago"
-}
 
 const renderTweets = function (tweets) {
   for (const user of tweets) {
@@ -38,15 +14,15 @@ const renderTweets = function (tweets) {
 }
 
 const createTweetElement = function(obj) {
-  var $article = $('<article>').addClass('tweet');
-    var $header = $('<header>').addClass('tweet-header').appendTo($article);
+    const $article = $('<article>').addClass('tweet');
+    const $header = $('<header>').addClass('tweet-header').appendTo($article);
       $('<img>').attr('src', obj.user.avatars.small).addClass('tweet-icon').appendTo($header);
       $('<h2>').text(obj.user.name).appendTo($header);
       $('<span>').text(obj.user.handle).appendTo($header);
-    var $section = $('<section>').addClass('tweet-message').appendTo($article);
+    const $section = $('<section>').addClass('tweet-message').appendTo($article);
       $('<p>').text(obj.content.text).appendTo($section);
-    var $footer = $('<footer>').addClass('tweet-footer').appendTo($article);
-      $('<span>').text(timeAgo(obj.create_at)).appendTo($footer);
+    const $footer = $('<footer>').addClass('tweet-footer').appendTo($article);
+      $('<span>').text(moment(obj.created_at).startOf('minute').fromNow()).appendTo($footer);
       $('<img>').attr('src', 'https://img.icons8.com/material-rounded/24/000000/like.png').addClass('icon').appendTo($footer);
       $('<img>').attr('src', 'https://img.icons8.com/material/24/000000/refresh.png').addClass('icon').appendTo($footer);
       $('<img>').attr('src', 'https://img.icons8.com/material/24/000000/filled-flag.png').addClass('icon').appendTo($footer);
@@ -62,18 +38,17 @@ const loadTweets = function () {
 
 loadTweets();
 
-
 $('#new-tweet').on('submit', (event) => {
   event.preventDefault();
-  let tweetText = $('textarea').val();
+  const tweetText = $('textarea').val();
   if (tweetText.length === 0) {
     $('#err-blank-tweet').slideDown('fast');
-    $('textarea').on('keyup', (event) => {
+    $('textarea').on('keydown', (event) => {
       $('#err-blank-tweet').hide();
     })
   } else if (tweetText.length > 140) {
       $('#err-characters-exceeded').slideDown('fast');
-      $('textarea').on('keyup', (event) => {
+      $('textarea').on('keydown', (event) => {
       $('#err-characters-exceeded').hide();
     })
   } else {

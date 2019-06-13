@@ -21,11 +21,6 @@
     <!-- Tweet CSS -->
      <link rel="stylesheet" href="/styles/tweet.css" type="text/css" />
 
-    <!-- External JS -->
-    <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
-    <script src="https://kit.fontawesome.com/bde0644054.js"></script>
-
-
   </head>
 
   <body>
@@ -37,7 +32,6 @@
       <button class="compose-button" type="button"> <i class="far fa-edit"></i>Compose</button>
     </nav>
 
-
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
@@ -48,7 +42,7 @@
         </div>
         <form id="new-tweet">
           <textarea id="tweet-text" name="text" placeholder="What are you humming about?"></textarea>
-          <input type="submit" value="Tweet">
+          <input class="tweet-button" type="submit" value="Tweet">
           <span class="counter">140</span>
         </form>
       </section>
@@ -57,6 +51,11 @@
       </section>
 
     </main>
+
+  <!-- External JS -->
+  <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
+  <script src="https://kit.fontawesome.com/bde0644054.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 
   <!-- App JS -->
   <script type="text/javascript" src="/scripts/app.js"></script>
