@@ -14,3 +14,22 @@
   vertical-align: middle;
 }
 
+.compose-button {
+  background-color: #f4f4f4;
+  color: #00a087;
+  float: right;
+  font-size: 1.3em;
+  height: 60px;
+  width: 120px;
+  opacity: .9;
+  border: solid 2px black;
+  border-radius: 7.5px;
+  margin-top: 10px;
+
+}
+
+.compose-button:hover {
+  opacity: 1;
+  cursor: pointer;
+  color: black;
+}

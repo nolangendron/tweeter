@@ -59,6 +59,7 @@ const loadTweets = function () {
     renderTweets(data);
   })
 };
+
 loadTweets();
 
 
@@ -77,5 +78,11 @@ $('#new-tweet').on('submit', (event) => {
   )}
 });
 
+  $('.new-tweet').hide();
 
+  $('button').on('click', (event) => {
+    $('.new-tweet').slideToggle();
+    $('textarea').focus();
+    $('body').scrollTop(0);
+  })
 });
