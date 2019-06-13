@@ -21,6 +21,12 @@ Front-end: HTML, CSS, JavaScript, jQuery and AJAX Back-end: Node, Express and Mo
 - body-parser: ^1.15.2
 - chance: ^1.0.2
 - md5: ^2.1.0
-- moment: ^2.24.0
+- moment: ^2.24.
+
+## Screenshots
+
+!["Compose New Tweet Box"](https://github.com/nolangendron/tweeter/blob/master/docs/Compose%20New%20Tweet%20Box.png?raw=true)
+!["Compose New Tweet Box Hidden"](https://github.com/nolangendron/tweeter/blob/master/docs/New%20Tweet%20Box%20Hidden.png?raw=true)
+!["Error Message"](https://github.com/nolangendron/tweeter/blob/master/docs/Error%20Message.png?raw=true)
 
 
