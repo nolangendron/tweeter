@@ -67,9 +67,15 @@ $('#new-tweet').on('submit', (event) => {
   event.preventDefault();
   let tweetText = $('textarea').val();
   if (tweetText.length === 0) {
-    alert('Tweet must contain at least one character');
+    $('#err-blank-tweet').slideDown('fast');
+    $('textarea').on('keyup', (event) => {
+      $('#err-blank-tweet').hide();
+    })
   } else if (tweetText.length > 140) {
-    alert('Tweet exceeds 140 characters');
+      $('#err-characters-exceeded').slideDown('fast');
+      $('textarea').on('keyup', (event) => {
+      $('#err-characters-exceeded').hide();
+    })
   } else {
       $.post('/tweets', $('#new-tweet').serialize(), (newTweet) => {
         loadTweets();

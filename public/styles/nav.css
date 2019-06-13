@@ -10,9 +10,8 @@
 #nav-bar .header {
   float: left;
   font-size: 2em;
-  line-height: 2.5;
-  vertical-align: middle;
-}
+  margin-top: 10px;
+  }
 
 .compose-button {
   background-color: #f4f4f4;
